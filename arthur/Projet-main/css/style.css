@@ -1,0 +1,1034 @@
+/* Général */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #e9f1f7, #ffffff); /* Dégradé pour un fond plus dynamique */
+    color: #4f4f4f; /* Gris moyen pour le texte */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1,h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5em;
+    color: #1d5e91; /* Bleu moyen pour attirer l'attention sans être trop saturé */
+    animation: fadeIn 1.5s ease-out;
+}
+
+.le-h1, .le-h2{
+    padding: 50px;
+}
+
+
+h3 {
+    color: #2c3e50; /* Bleu foncé pour un contraste subtil mais clair */
+    font-weight: 500;
+}
+
+/* Styles généraux pour tous les formulaires */
+.form-generic {
+    width: 70%; /* Largeur du formulaire */
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background: #ffffff; /* Fond blanc */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre pour profondeur */
+    transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
+}
+
+.form-generic:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+.form-generic label {
+    font-weight: bold; /* Labels en gras */
+    margin-top: 15px;
+    display: block; /* Afficher les labels en bloc */
+    color: #34495e; /* Couleur des labels */
+    margin-bottom: 5px; /* Espacement inférieur */
+}
+
+.form-generic input[type="text"],
+.form-generic input[type="time"],
+.form-generic input[type="submit"],
+.form-generic input[type="date"],
+.form-generic input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #d1d8e0; /* Bordure gris clair */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f7fafc; /* Fond très clair */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour les bordures */
+}
+
+.form-generic input[type="text"]:focus,
+.form-generic input[type="time"]:focus,
+.form-generic input[type="date"]:focus,
+.form-generic input[type="file"]:focus {
+    border-color: #1abc9c; /* Bordure verte au focus */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.4); /* Ombre au focus */
+}
+
+.form-generic input[type="submit"] {
+    background-color: #3498db; /* Bleu vif */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px; /* Espacement supérieur */
+    padding: 14px; /* Espacement intérieur */
+    border-radius: 6px; /* Coins arrondis */
+    transition: background-color 0.3s ease, transform 0.3s; /* Transition pour l'effet de survol */
+}
+
+.form-generic input[type="submit"]:hover {
+    background-color: #2980b9; /* Teinte plus foncée au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+/* Tables */
+table {
+    width: 50%;
+    margin: 30px auto;
+    margin-left: 20px;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+th, td {
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #e1e8ee; /* Bordure subtile mais présente */
+}
+
+th {
+    background-color: #2980b9; /* Bleu moyen pour l'entête de la table */
+    color: white;
+    font-size: 1.1em;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f8fa; /* Gris clair et frais pour les lignes paires */
+}
+
+td input[type="text"],
+td input[type="time"] {
+    width: 100%;
+    border: 1px solid #d1d8e0;
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+td input[type="text"]:focus,
+td input[type="time"]:focus {
+    border-color: #1abc9c;
+}
+
+/* Boutons */
+button {
+    background: #f39c12; /* Jaune moutarde, une touche plus vibrante */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin-right: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #e67e22; /* Teinte plus foncée de jaune/orange pour l'effet hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    form, table {
+        width: 90%;
+    }
+
+    form input[type="text"],
+    form input[type="time"],
+    form input[type="submit"],
+    td input[type="text"],
+    td input[type="time"] {
+        width: calc(100% - 20px);
+    }
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #34495e; /* Gris foncé pour les liens */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+#calendar {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+/* Styles pour l'en-tête */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Centrer verticalement */
+    background-color: #34495e; /* Couleur de fond plus douce et élégante */
+    padding: 15px 30px; /* Espacement intérieur plus généreux */
+    color: white; /* Couleur du texte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus marquée pour donner de la profondeur */
+    border-radius: 8px; /* Coins arrondis pour un aspect plus doux */
+    transition: background 0.3s; /* Transition pour l'effet de survol */
+    position: relative; /* Position relative pour le z-index */
+    z-index: 10; /* Assurez-vous que l'en-tête est au-dessus de la sidebar */
+}
+
+/* Styles pour le texte de bienvenue */
+.user-info {
+    flex-grow: 1; /* Permet au texte de prendre l'espace disponible */
+    text-align: center; /* Centrer le texte horizontalement */
+}
+
+.logout-form {
+    margin: 0; /* Supprimer les marges par défaut */
+}
+
+.logout-form button {
+    background: #e74c3c; /* Rouge pour le bouton de déconnexion */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-form button:hover {
+    background: #c0392b; /* Teinte plus foncée au survol */
+}
+/* Styles pour le menu déroulant */
+.dropdown {
+    position: relative;
+    margin-left: auto; /* Aligner le dropdown à gauche */
+}
+
+.dropdown img {
+    cursor: pointer; /* Curseur pointer pour l'image */
+    width: 30px; /* Taille de l'image du menu */
+    transition: transform 0.3s; /* Transition pour l'effet de survol */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /* Aligner le dropdown à gauche */
+    background-color: #ffffff; /* Fond blanc pour le menu déroulant */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 0; /* Espacement intérieur */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #34495e; /* Couleur des liens */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+    transition: background 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Couleur de fond au survol */
+}
+
+/* Styles pour le menu de navigation */
+.sidebar {
+    width: 250px;
+    position: fixed; /* Fixe le menu à gauche */
+    top: 0;
+    left: -250px; /* Masquer la sidebar en la dcalant à gauche */
+    height: 100%;
+    background-color: #343a40; /* Couleur de fond du menu */
+    color: white; /* Couleur du texte */
+    padding-top: 60px; /* Ajustez cette valeur pour aligner avec le header */
+    z-index: 1000; /* Assurez-vous que la sidebar est en dessous de l'en-tête */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+    transition: left 0.3s; /* Transition pour l'animation de l'affichage */
+}
+
+/* Classe pour afficher la sidebar */
+.sidebar.active {
+    left: 0; /* Afficher la sidebar */
+}
+
+/* Autres styles pour le menu et le contenu */
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: background 0.3s ease, padding 0.3s ease; /* Transition pour l'effet de survol */
+    border-radius: 5px; /* Coins arrondis pour les liens */
+}
+
+.sidebar a:hover {
+    background-color: #495057; /* Couleur de fond au survol */
+    padding-left: 25px; /* Décalage à gauche au survol */
+}
+
+/* Ajout d'un effet de focus pour l'accessibilité */
+.sidebar a:focus {
+    outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.5); /* Ombre pour le focus */
+}
+
+/* Styles pour la flèche de retour en haut */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px; /* Positionner à 20px du bas */
+    right: 20px; /* Positionner à 20px de la droite */
+    background-color: #1abc9c; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none;
+    border-radius: 50%; /* Rendre la flèche ronde */
+    width: 50px; /* Largeur de la flèche */
+    height: 50px; /* Hauteur de la flèche */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Curseur pointer pour le bouton */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+    transition: background 0.3s ease; /* Transition pour l'effet de survol */
+    z-index: 1000; /* Assurez-vous que la flèche est au-dessus de tous les éléments */
+}
+
+.scroll-to-top:hover {
+    background-color: #16a085; /* Teinte plus foncée au survol */
+}
+
+/* Animation pour le défilement vers le haut */
+@keyframes scrollUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Appliquer l'animation à la flèche */
+.scroll-to-top.animate {
+    animation: scrollUp 0.5s ease forwards; /* Animation de 0.5s */
+}
+
+/* Amélioration des styles des listes non ordonnées */
+ul {
+    list-style-type: none; /* Supprimer les puces par défaut */
+    padding: 0; /* Supprimer le remplissage par défaut */
+    margin: 0; /* Supprimer la marge par défaut */
+    border: 1px solid #d1d8e0; /* Bordure subtile autour de la liste */
+    border-radius: 8px; /* Coins arrondis pour un aspect plus doux */
+    background-color: #ffffff; /* Fond blanc pour la liste */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    max-height: 300px; /* Hauteur maximale pour éviter un débordement */
+    overflow-y: auto; /* Activer le défilement si nécessaire */
+    transition: box-shadow 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+/* Styles pour les éléments de la liste */
+ul li {
+    padding: 12px 16px; /* Espacement autour des éléments de la liste */
+    border-bottom: 1px solid #e1e8ee; /* Bordure entre les éléments */
+    transition: background-color 0.3s, transform 0.2s; /* Transition pour l'effet de survol */
+}
+
+/* Effet de survol pour les éléments de la liste */
+ul li:hover {
+    background-color: #f7fafc; /* Couleur de fond au survol */
+    cursor: pointer; /* Curseur pointer pour indiquer que l'élément est cliquable */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+/* Dernier élément de la liste sans bordure inférieure */
+ul li:last-child {
+    border-bottom: none; /* Supprimer la bordure du dernier élément */
+}
+
+/* Styles pour les éléments sélectionnés */
+ul li.selected {
+    background-color: #1abc9c; /* Couleur de fond pour l'élément sélectionné */
+    color: white; /* Couleur du texte pour l'élément sélectionné */
+}
+
+/* Styles pour les listes d'autocomplétion */
+
+/* Amélioration des styles pour le champ de date de naissance */
+form input[type="date"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #d1d8e0; /* Bordure gris clair */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f7fafc; /* Fond très clair */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ajout d'un effet de focus pour le champ de date */
+form input[type="date"]:focus {
+    border-color: #1abc9c; /* Bordure verte au focus */
+    outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.4); /* Ombre au focus */
+}
+
+/* Styles pour les labels des champs de date */
+form label[for="datenaissancecheval"] {
+    font-weight: 600; /* Mettre en gras */
+    color: #34495e; /* Couleur gris-bleu */
+    margin-top: 20px; /* Espacement supérieur */
+}
+
+/* Amélioration des styles pour le champ de fichier photo */
+form input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #d1d8e0; /* Bordure gris clair */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f7fafc; /* Fond très clair */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ajout d'un effet de focus pour le champ de fichier */
+form input[type="file"]:focus {
+    border-color: #1abc9c; /* Bordure verte au focus */
+    outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.4); /* Ombre au focus */
+}
+
+/* Styles pour le label du champ de fichier */
+form label[for="userfile"] {
+    font-weight: 600; /* Mettre en gras */
+    color: #34495e; /* Couleur gris-bleu */
+    margin-top: 20px; /* Espacement supérieur */
+}
+
+/* Styles pour le bouton de fichier */
+form input[type="file"]::-webkit-file-upload-button {
+    background: #1abc9c; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 16px; /* Espacement intérieur */
+    border-radius: 6px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer pour le bouton */
+    transition: background 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+form input[type="file"]::-webkit-file-upload-button:hover {
+    background: #16a085; /* Teinte plus foncée au survol */
+}
+
+/* Styles pour le conteneur de connexion */
+.container-connexion {
+    max-width: 90%; /* Largeur maximale du formulaire */
+    margin: 100px auto; /* Centrer verticalement et horizontalement */
+    padding: 30px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    background: #ffffff; /* Fond blanc */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    text-align: center; /* Centrer le texte */
+}
+
+/* Styles pour le titre */
+h2 {
+    color: #1d5e91; /* Couleur du titre */
+    margin-bottom: 20px; /* Espacement inférieur */
+}
+
+/* Styles pour les groupes de formulaires */
+.form-group {
+    margin-bottom: 15px; /* Espacement entre les groupes */
+}
+
+/* Styles pour les labels */
+label {
+    display: block; /* Afficher les labels en bloc */
+    margin-bottom: 5px; /* Espacement inférieur */
+    font-weight: bold; /* Mettre en gras */
+    color: #34495e; /* Couleur gris-bleu */
+}
+
+/* Styles pour les inputs */
+.input-field {
+    width: 100%; /* Largeur complète */
+    padding: 12px; /* Espacement intérieur */
+    border: 1px solid #d1d8e0; /* Bordure gris clair */
+    border-radius: 6px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclure le padding dans la largeur */
+    font-size: 1em; /* Taille de police */
+    background-color: #f7fafc; /* Fond très clair */
+    transition: border-color 0.3s ease; /* Transition pour la bordure */
+}
+
+/* Effet de focus sur les inputs */
+.input-field:focus {
+    border-color: #1abc9c; /* Bordure verte au focus */
+    outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.4); /* Ombre au focus */
+}
+
+/* Styles pour le bouton de soumission */
+.btn-submit {
+    width: 100%; /* Largeur complète */
+    padding: 12px; /* Espacement intérieur */
+    background-color: #1abc9c; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 6px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+    font-weight: bold; /* Mettre en gras */
+    transition: background 0.3s ease; /* Transition pour l'effet de survol */
+    margin-top: 20px; /* Espacement supérieur */
+}
+
+.modifier-btn{
+    background-color: green;
+}
+
+.modifier-btn:hover{
+    background-color: rgb(1, 184, 1);
+}
+
+/* Effet de survol sur le bouton */
+.btn-submit:hover {
+    background-color: rgb(22, 160, 133); /* Teinte plus foncée au survol */
+}
+
+.confirmer-btn {
+    background-color: rgb(0, 202, 162);
+}
+
+.confirmer-btn:hover {
+    background-color: rgb(0, 184, 147);
+}
+
+.annuler-btn{
+    background-color: rgb(255, 130, 0);
+}
+
+.annuler-btn:hover {
+    background-color: rgb(255, 150, 64);
+}
+
+.supprimer-btn{
+    background-color: red;
+}
+
+.supprimer-btn:hover {
+    background-color: rgb(255, 64, 64);
+}
+
+.valider-btn{
+    background-color: rgb(0, 118, 197);
+}
+
+.valider-btn:hover{
+    background-color: rgb(0, 140, 210);
+}
+
+/* Styles pour le lien de mot de passe oublié */
+.forgot-password {
+    margin-top: 15px; /* Espacement supérieur */
+}
+
+.forgot-password a {
+    color: #1d5e91; /* Couleur du lien */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.forgot-password a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container-connexion {
+        width: 90%; /* Largeur du conteneur sur mobile */
+    }
+}
+
+/* Styles pour le bouton Menu */
+#menu-button {
+    height: 100%; /* Prendre toute la hauteur de la navbar */
+    width: 250px; /* Largeur égale à celle de la sidebar */
+    background-color: transparent; /* Pas de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur pointer */
+    padding: 0; /* Pas d'espacement intérieur */
+    font-size: 18px; /* Taille de police */
+    text-align: center; /* Centrer le texte */
+    position: absolute; /* Positionner par rapport à la navbar */
+    left: 0; /* Aligné à gauche */
+    top: 0; /* Aligné en haut */
+    z-index: 1; /* S'assurer qu'il est au-dessus des autres éléments */
+}
+
+/* Optionnel : ajouter un effet de survol pour indiquer que c'est cliquable */
+#menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Légère teinte au survol */
+}
+
+/* Styles pour les inputs de connexion */
+.input-connexion {
+    width: 100%; /* Largeur complète */
+    padding: 12px; /* Espacement intérieur */
+    border: 1px solid #d1d8e0; /* Bordure gris clair */
+    border-radius: 6px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclure le padding dans la largeur */
+    font-size: 1em; /* Taille de police */
+    background-color: #f7fafc; /* Fond très clair */
+    transition: border-color 0.3s ease; /* Transition pour la bordure */
+}
+
+/* Effet de focus sur les inputs de connexion */
+.input-connexion:focus {
+    border-color: #1abc9c; /* Bordure verte au focus */
+    outline: none; /* Supprimer le contour par défaut */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.4); /* Ombre au focus */
+}
+
+/* Styles pour le bouton de soumission de connexion */
+.btn-submit-connexion {
+    width: 100%; /* Largeur complète */
+    padding: 12px; /* Espacement intérieur */
+    background-color: #1abc9c; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 6px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+    font-weight: bold; /* Mettre en gras */
+    transition: background 0.3s ease; /* Transition pour l'effet de survol */
+    margin-top: 20px; /* Espacement supérieur */
+}
+
+/* Effet de survol sur le bouton de soumission de connexion */
+.btn-submit-connexion:hover {
+    background-color: rgb(22, 160, 133); /* Teinte plus foncée au survol */
+}
+
+/* Styles pour le conteneur principal */
+.menu-container {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+}
+
+/* Styles pour le menu principal */
+.liens {
+    flex: 0 0 250px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-section {
+    margin-bottom: 1.5rem;
+}
+
+.menu-section h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.liens a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #34495e;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.liens a:hover {
+    background: #3498db;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Styles pour le dashboard */
+.dashboard {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Styles pour les événements */
+.event-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.event-title {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.event-comment {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+/* Styles pour les cours */
+.cours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cours-time {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Styles pour les statistiques */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+    }
+    
+    .liens {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Styles pour la navigation par onglets */
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.nav-btn {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #e9ecef;
+}
+
+.nav-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* Styles pour le conteneur d'autocomplétion */
+.input_container {
+    position: relative;
+    width: 100%;
+}
+
+/* Styles pour le champ de saisie d'autocomplétion */
+.input_container input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: 1px solid #d1d8e0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f7fafc;
+    transition: all 0.3s ease;
+}
+
+/* Styles pour la liste d'autocomplétion */
+.input_container ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #d1d8e0;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2px;
+    display: block;
+    list-style: none;
+}
+
+/* Styles pour les éléments de la liste d'autocomplétion */
+.input_container ul li {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #e1e8ee;
+}
+
+/* Effet de survol sur les éléments de la liste */
+.input_container ul li:hover {
+    background-color: #f5f8fa;
+    padding-left: 20px;
+}
+
+/* Style pour le texte en gras dans les suggestions */
+.input_container ul li b {
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* Styles pour la galerie de photos */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.photo-container {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.photo-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 200px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Garde les proportions tout en remplissant l'espace */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Styles pour les informations sous les photos */
+.photo-info {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #eef2f7;
+}
+
+.photo-info p {
+    margin: 0.5rem 0;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.photo-info .nom {
+    font-weight: 600;
+    color: #1d5e91;
+}
+
+.photo-info .numsire {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+/* Responsive design amélioré */
+@media (max-width: 1200px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .photo-container {
+        padding: 1rem;
+    }
+
+    .photo-container img {
+        height: 160px;
+    }
+}
+
+.no-photos {
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    background: #fdf0ed;
+    border-radius: 8px;
+    border: 1px solid #fadbd8;
+}
+
+/* Responsive design pour la galerie */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
